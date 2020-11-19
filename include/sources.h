@@ -9,13 +9,16 @@
     #define SOURCE_H_
 
     #include "struct.h"
+    #include <stdlib.h>
 
     #ifndef ROOT_H_
         #define ROOT_H_
 
         #include <stddef.h>
+        #include "my.h"
 
-        size_t hello_world(void);
+        int bsq(char *filepath);
+        int check_args(int ac);
 
     #endif /* !ROOT_H_ */
 

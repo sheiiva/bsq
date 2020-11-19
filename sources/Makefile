@@ -21,7 +21,8 @@ override CFLAGS 	+=	-W -Wall -Werror -Wextra $(INCLUDES)
 override LDFLAGS 	+= 	-L./$(LIB_PATH)
 override LDLIBS 	+=	-lmy
 
-SRC		=	hello_world.c		\
+SRC		=	bsq.c				\
+			check_args.c		\
 			main.c
 
 OBJ 	= 	$(SRC:.c=.o)

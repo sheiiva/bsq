@@ -7,7 +7,9 @@
 
 #include "sources.h"
 
-int main(void)
+int main(int ac, char **av)
 {
-    return (hello_world());
+    if (check_args(ac) == EXIT_FAILURE)
+        return (84);
+    return (bsq(av[1]));
 }
