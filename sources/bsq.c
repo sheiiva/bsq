@@ -1,5 +1,5 @@
 /*
-** EPITECH PROJECT, 2018
+** EPITECH PROJECT, 2020
 ** SOURCES // ROOT
 ** File description:
 ** bsq.c
@@ -9,9 +9,12 @@
 
 int print_map(char *map)
 {
-    if (my_putstr(map, STDOUT_FILENO) == EXIT_ERROR)
-        return (EXIT_ERROR);
-    if (my_putstr("\n", STDOUT_FILENO) == EXIT_ERROR)
+    int i = 0;
+
+    while (map[i] && (map[i] != '\n'))
+        i += 1;
+    i += 1;
+    if (my_putstr(map+i, STDOUT_FILENO) == EXIT_ERROR)
         return (EXIT_ERROR);
     return (EXIT_SUCCESS);
 }
@@ -22,10 +25,14 @@ int bsq(char *filepath)
 
     if (!buffer)
         return (EXIT_ERROR);
-    // check map
+    // if (check_map(buffer) == EXIT_ERROR) {
+    //     free(buffer);
+    //     return (EXIT_ERROR);
+    // }
     // init int **
     // algo
     if (print_map(buffer) == EXIT_ERROR)
         return (EXIT_ERROR);
+    free(buffer);
     return (EXIT_SUCCESS);
 }
