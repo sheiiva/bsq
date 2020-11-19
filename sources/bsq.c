@@ -25,10 +25,11 @@ int bsq(char *filepath)
 
     if (!buffer)
         return (EXIT_ERROR);
-    // if (check_map(buffer) == EXIT_ERROR) {
-    //     free(buffer);
-    //     return (EXIT_ERROR);
-    // }
+    if (check_map(buffer) == EXIT_ERROR) {
+        my_putstr("ERROR: map format.\n", STDERR_FILENO);
+        free(buffer);
+        return (EXIT_ERROR);
+    }
     // init int **
     // algo
     if (print_map(buffer) == EXIT_ERROR)

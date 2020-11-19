@@ -23,6 +23,7 @@ override LDLIBS 	+=	-lmy
 
 SRC		=	bsq.c				\
 			check_args.c		\
+			check_map.c			\
 			file_handler.c		\
 			main.c
 

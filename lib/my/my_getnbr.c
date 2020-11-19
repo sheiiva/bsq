@@ -24,11 +24,9 @@ int my_getnbr(char *str)
         neg = neg * (-1);
         i = i + 1;
     }
-    if (str[i] == '\0')
-        return (0);
     while (str[i] != '\0') {
         if (my_isnum(str[i]) == -1)
-            return (0);
+            return (nb);
         nb = (nb * 10) + (str[i] - '0');
         i = i + 1;
     }

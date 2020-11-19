@@ -27,6 +27,7 @@
         int check_args(int ac);
         char *get_content(char *filepath);
         int get_file_size(char *filepath);
+        int check_map(char *map);
 
     #endif /* !ROOT_H_ */
 
