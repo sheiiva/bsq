@@ -23,6 +23,7 @@ override LDLIBS 	+=	-lmy
 
 SRC		=	bsq.c				\
 			check_args.c		\
+			file_handler.c		\
 			main.c
 
 OBJ 	= 	$(SRC:.c=.o)

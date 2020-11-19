@@ -10,8 +10,8 @@
 int check_args(int ac)
 {
     if (ac != 2) {
-        my_putstr("ERROR: wrong number of arguments.", 2);
-        return (EXIT_FAILURE);
+        my_putstr("ERROR: wrong number of arguments.", STDERR_FILENO);
+        return (EXIT_ERROR);
     }
     return (EXIT_SUCCESS);
 }

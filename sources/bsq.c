@@ -9,6 +9,10 @@
 
 int bsq(char *filepath)
 {
-    (void)filepath;
+    char *buffer = get_content(filepath);
+
+    if (!buffer)
+        return (EXIT_ERROR);
+    free(buffer);
     return (EXIT_SUCCESS);
 }
