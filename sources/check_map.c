@@ -7,16 +7,20 @@
 
 #include "sources.h"
 
-// static int check_length(char *map)
-// {
-//     int i = 0;
+#include <stdio.h>
 
-//     while (map[i] && (map[i] != '\n'))
-//         i += 1;
-//     i += 1;
+static int check_length(char *map)
+{
+    int i = my_strlen(map, '\n') + 1;
+    size_t size = my_strlen(map+i, '\n');
 
-//     return (EXIT_SUCCESS);
-// }
+    while (map[i]) {
+        if (my_strlen(map+i, '\n') != size)
+            return (EXIT_ERROR);
+        i += (size + 1);
+    }
+    return (EXIT_SUCCESS);
+}
 
 int check_map(char *map)
 {
@@ -26,7 +30,7 @@ int check_map(char *map)
         return (EXIT_ERROR);
     if (width != (my_counter(map, '\n') - 1))
         return (EXIT_ERROR);
-    // if (check_length(map) == EXIT_ERROR)
-    //     return (EXIT_ERROR);
+    if (check_length(map) == EXIT_ERROR)
+        return (EXIT_ERROR);
     return (EXIT_SUCCESS);
 }
