@@ -13,6 +13,20 @@
 
     #define EXIT_ERROR 84
 
+    #define EMPTY       '.'
+    #define OBSTACLE    'o'
+    #define iEMPTY      1
+    #define iOBSTACLE   0
+
+    #define UP(map,length,x)(map[x-length])
+    #define LEFT(map,length,x)(map[x-1])
+    #define CORNER(map,length,x)(map[x-length-1])
+
+    typedef struct cell_s {
+        size_t x;
+        size_t value;
+    } cell_t;
+
     #ifndef ROOT_H_
         #define ROOT_H_
 

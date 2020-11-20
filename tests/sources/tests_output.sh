@@ -6,13 +6,18 @@ mkdir tmp
 PATH_MAP="tests/deps/maps"
 PATH_MAP_SOLVED="tests/deps/maps_solved"
 
+counter=0
+total=0
+
 check () {
+total=$((total+1))
 ./bsq $PATH_MAP/$1 > tmp/$1
-res=$(diff $PATH_MAP_SOLVED/$1 tmp/$1)
-expexted=$(echo "Files $PATH_MAP_SOLVED/$1 and tmp/$1 are identical\n")
+res=$(diff -s $PATH_MAP_SOLVED/$1 tmp/$1)
+expexted=$(echo "Files $PATH_MAP_SOLVED/$1 and tmp/$1 are identical")
 if [[ "$res" == "$expexted" ]]
 then
 echo "OK: $1"
+counter=$((counter+1))
 else
 echo -e "ERROR: $1"
 fi
@@ -58,5 +63,7 @@ check "intermediate_map_one_line_with_obstacles_75pc"
 check "intermediate_map_2000_2000"
 check "intermediate_map_500_500_3"
 check "intermediate_map_one_column_with_obstacles_75pc"
+
+echo -e "\nTEST: ($counter/$total)\n"
 
 rm -rf tmp

@@ -17,7 +17,7 @@ LIB_I_PATH			=	$(LIB_PATH)my/$(INCLUDE_PATH)
 
 INCLUDES			=  -I./$(I_PATH) -I./$(LIB_I_PATH)
 
-override CFLAGS 	+=	-W -Wall -Werror -Wextra $(INCLUDES)
+override CFLAGS 	+=	-W -Wall -Werror -Wextra $(INCLUDES) -g3
 override LDFLAGS 	+= 	-L./$(LIB_PATH)
 override LDLIBS 	+=	-lmy
 
