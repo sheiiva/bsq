@@ -1,5 +1,5 @@
 ##
-## EPITECH PROJECT, 2018
+## EPITECH PROJECT, 2020
 ## TESTS
 ## File description:
 ## MAKEFILE
@@ -24,17 +24,15 @@ ROOT_PATH		=	../
 I_PATH			=	include/
 LIB_PATH		=	$(ROOT_PATH)lib/
 LIB_I_PATH		=	$(LIB_PATH)my/$(I_PATH)
-PRINTF_I_PATH	=	$(LIB_PATH)my_printf/$(I_PATH)
 SOURCE_PATH		=	$(ROOT_PATH)sources/
 SOURCE_LIB		= 	$(ROOT_PATH)sources/libsrc/
 SOURCE_I_PATH	=	$(ROOT_PATH)$(I_PATH)
 
-override CFLAGS	    +=	-W -Wall -Wextra -Wextra -I./$(I_PATH) -I./$(SOURCE_I_PATH) -I./$(LIB_I_PATH) -I./$(PRINTF_I_PATH)  --coverage
+override CFLAGS	    +=	-W -Wall -Wextra -Wextra -I./$(I_PATH) -I./$(SOURCE_I_PATH) -I./$(LIB_I_PATH) --coverage
 override LDFLAGS    += 	-L./$(SOURCE_LIB) -L./$(LIB_PATH)
 override LDLIBS     +=	-lcriterion -lsrc -lmy
 
-SRC 	= 	$(TEST_SRC)t_hello_world.c		\
-			$(REC_FUNC)redirect.c
+SRC 	= 	$(REC_FUNC)redirect.c
 
 OBJ 	= 	$(SRC:.c=.o)
 

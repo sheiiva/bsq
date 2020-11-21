@@ -25,7 +25,9 @@ SRC		=	bsq.c				\
 			check_args.c		\
 			check_map.c			\
 			file_handler.c		\
-			main.c
+			findsquare.c		\
+			main.c				\
+			utils.c
 
 OBJ 	= 	$(SRC:.c=.o)
 

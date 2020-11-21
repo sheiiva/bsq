@@ -7,8 +7,6 @@
 
 #include "sources.h"
 
-#include <stdio.h>
-
 static int check_length(char *map)
 {
     int i = my_strlen(map, '\n') + 1;

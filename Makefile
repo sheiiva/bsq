@@ -33,7 +33,7 @@ fclean:
 re: fclean all
 
 tests_run: all
+	@$(MAKE) -C $(TST_PATH)
 	@./tests/sources/tests_output.sh
-	# @$(MAKE) -C $(TST_PATH)
 
 .PHONY: all clean fclean re tests_run

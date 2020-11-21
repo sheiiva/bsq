@@ -19,23 +19,10 @@ RM			=	@rm -f
 PRINT		=	@echo -e
 
 SRC 	=	$(LIB_PATH)my_counter.c				\
-			$(LIB_PATH)my_freetab.c				\
 			$(LIB_PATH)my_getnbr.c				\
-			$(LIB_PATH)my_putchar.c 			\
 			$(LIB_PATH)my_putstr.c 				\
-			$(LIB_PATH)my_realloc.c				\
-			$(LIB_PATH)my_revstr.c 				\
 			$(LIB_PATH)my_str_alloc.c			\
-			$(LIB_PATH)my_str_concat.c			\
-			$(LIB_PATH)my_str_isletter.c		\
-			$(LIB_PATH)my_str_to_wordarray.c	\
-			$(LIB_PATH)my_strcmp.c 				\
-			$(LIB_PATH)my_strncmp.c				\
-			$(LIB_PATH)my_strcpy.c				\
 			$(LIB_PATH)my_strlen.c				\
-			$(LIB_PATH)my_tab_alloc.c			\
-			$(LIB_PATH)my_tabcpy.c				\
-			$(LIB_PATH)my_tablen.c				\
 
 OBJ 	= 	$(SRC:.c=.o)
 
