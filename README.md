@@ -42,4 +42,17 @@ DESCRIPTION
     file    file that contains the map
 ```
 
+## EXAMPLE:
+
+```
+>> cat example
+. . . o
+. . . .
+o . . o
+>> ./bsq example
+. x x o
+. x x .
+o . . o
+```
+
 Author [**Corentin COUTRET-ROZET**](https://github.com/sheiiva)
