@@ -58,6 +58,7 @@ size_t check_value(size_t *map, size_t length, size_t x, cell_t *best)
 
 char *write_square(char *map, cell_t best)
 {
+    int current = 0;
     size_t tmp = my_strlen(map, '\n') + 1;
     size_t length = my_strlen(map+tmp, '\n');
     size_t j = 0;
@@ -65,7 +66,8 @@ char *write_square(char *map, cell_t best)
 
     while (j < best.value) {
         while (best.x - i < best.value) {
-            map[i - (j * (length+1)) + (int)(i / length) + tmp] = 'x';
+            current = i - (j * (length+1)) + (int)(i / length) + tmp;
+            map[current] = map[current] == OBSTACLE ? OBSTACLE : 'x';
             i -= 1;
         }
         i = best.x;
@@ -80,7 +82,7 @@ char *findsquare(char *map)
     size_t length = my_strlen(map+i, '\n');
     size_t *imap = malloc(sizeof(size_t) * ((length * my_getnbr(map)) + 1));
     size_t x = 0;
-    cell_t best = {0, 0};
+    cell_t best = {0, 1};
 
     if (!imap) {
         free(map);
